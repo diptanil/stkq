@@ -139,7 +139,7 @@ stkq filings AAPL
 Example:
 
 ```text
-format qstock/1
+format qstock_0.1.0
 currency USD    
 
 portfolio personal "Personal Portfolio"
@@ -192,7 +192,7 @@ Use semicolon comments:
 Always include:
 
 ```text
-format qstock/1
+format qstock_0.1.0
 ```
 
 This allows future grammar migrations.

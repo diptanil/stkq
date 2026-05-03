@@ -1,0 +1,16 @@
+format qstock_0.1.0
+currency USD
+
+portfolio personal "Personal Portfolio"
+
+account fidelity "Fidelity Brokerage"
+  portfolio: personal
+  currency: USD
+
+2025-01-15 buy AAPL 10 @ 187.35 USD
+  account: fidelity
+  fee: 0.00 USD
+
+2025-04-01 sell AAPL 2 @@ 410.20 USD
+  account: fidelity
+  fee: 0.00 USD

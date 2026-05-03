@@ -1,0 +1,44 @@
+; Parser fixture modeled after examples/portfolio.qstock.
+; It intentionally covers quoted names, inline comments, all transaction types,
+; comment stripping, per-share prices, total prices, dividends, reinvestments, and splits.
+
+format qstock_0.1.0
+currency USD
+
+portfolio personal "Personal Portfolio"
+
+account schwab "Charles Schwab" personal USD
+
+account fidelity "Fidelity Brokerage"
+  portfolio: personal
+  currency: USD
+
+account schwab-ira "Schwab IRA"
+  portfolio: personal
+  currency: USD
+
+2025-01-15 buy aapl 10 @ 187.35 USD ; lower-case symbols are normalized
+  account: fidelity
+  fee: 0.00 USD
+  note: initial Apple position ; trailing metadata comments are stripped
+
+2025-02-03 buy VOO 3 @@ 4301.20 USD
+  account: schwab-ira
+  fee: 0.00 USD
+
+2025-03-15 dividend AAPL 12.40 USD
+  account: fidelity
+  mode: cash
+
+2025-03-15 dividend VOO 9.30 USD
+  account: schwab-ira
+  mode: reinvest
+  shares: 0.0215
+  price: 432.56 USD
+
+2025-04-01 sell AAPL 2 @ 205.10 USD
+  account: fidelity
+  fee: 1.25 USD
+
+2025-06-10 split NVDA 10:1
+  account: fidelity
