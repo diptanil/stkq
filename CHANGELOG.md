@@ -15,6 +15,7 @@ All notable changes to StockQuery will be documented in this file.
 - Added `shopspring/decimal` as the decimal arithmetic dependency for money and quantity parsing.
 - Added parser test fixtures for simple portfolios, full portfolio coverage, and invalid indented metadata.
 - Added unit tests for parsing portfolios, accounts, transactions, metadata, decimal fields, source positions, symbol normalization, and parse errors.
+- Added ledger validation with aggregated semantic errors for format directives, duplicate portfolios and accounts, account-to-portfolio references, transaction account references, and transaction-specific numeric constraints.
 
 ### Documentation
 
@@ -25,6 +26,7 @@ All notable changes to StockQuery will be documented in this file.
 - Documented the default file layout and initial `qstock_0.1.0` portfolio file format, including accounts, buys, sells, dividends, splits, comments, and format versioning.
 - Added a sample `examples/portfolio.qstock` file covering accounts, buys, sells, cash dividends, reinvested dividends, fees, notes, and splits.
 - Added an ADR documenting why StockQuery uses arbitrary-precision decimal arithmetic instead of `float64` for money.
+- Added inline documentation for ledger validation errors, aggregated validation reporting, validation pass ordering, and transaction-specific validation rules.
 
 ### Changed
 
